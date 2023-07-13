@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ¿Eres mi amix?
+        </title>
+            <style>
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: x-large;
+                    background-color: #f2f2f2;
+                    padding: 20px;
+                    background-image: url(background.jpg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+                h2 {
+                    background-color: #ffffff;
+                    color: #031246;
+                    padding: 20px;
+                }
+                #yesB {
+                    width: 100px;
+                    height: 100px;
+                    background-color: #fb0691;
+                    color: #ffffff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    left: 40%;
+                    transform: translate(-50%, -50%);
+                    transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
+                }
+                .moving-button {
+                    width: 100px;
+                    height: 100px;
+                    background-color: #fb0691;
+                    color: #ffffff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    left: 60%;
+                    transform: translate(-50%, -50%);
+                    transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
+                }
+                .moving-button:hover {
+                    background-color: #58082f;
+                }
+            </style>  
+    </head>
+    <body>
+        <h2><center>Si realmente eres mi amix ¿Me depositarias 50,000 pesos?</center></h2>
+        <button id="yesB" onclick="showAlert()">Si</button>
+        <!--<p class="message" id = "messageText"></p>-->
+        <button class="moving-button" onmouseover="moveButton()">No</button>
+
+        <script>
+            function moveButton(){
+                const button = document.querySelector('.moving-button');
+                const newPositionX = Math.floor(Math.random() * (window.innerWidth -100));
+                const newPositionY = Math.floor(Math.random() * (window.innerHeight -100));
+                button.style.left = newPositionX +'px';
+                button.style.top = newPositionY + 'px';
+            }
+            function showAlert(){
+                window.alert("Sabia que si eras mi amix, espero el deposito <3");
+            }
+        </script>
+    </body>
+</html>
