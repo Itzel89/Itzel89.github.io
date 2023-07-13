@@ -11,9 +11,10 @@
                     background-color: #f2f2f2;
                     padding: 20px;
                     background-image: url(background.jpg);
-                    background-size: cover;
-                    background-attachment: fixed;
+                    background-position: center center;
                     background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover;
                 }
                 .contenedor {
                     width: 100%;
@@ -37,7 +38,7 @@
                     transform: translate(-50%, -50%);
                     transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
                 }
-                .moving-button {
+                .moving-button, .moving-button:active {
                     width: 10%;
                     height: 15%;
                     background-color: #fb0691;
@@ -71,7 +72,7 @@
         <h2><center>Si realmente eres mi amix ¿Me depositarias 50,000 pesos?</center></h2>
         <button id="yesB" onclick="showAlert()">Si</button>
         <!--<p class="message" id = "messageText"></p>-->
-        <button class="moving-button" onclick="moveButton()" onmouseover="moveButton()">No</button>
+        <button class="moving-button" ontouchstart="toggleActivateState(this)" onmouseover="moveButton()">No</button>
         </div>
         <script>
             function moveButton(){
@@ -83,6 +84,9 @@
             }
             function showAlert(){
                 window.alert("Sabia que si eras mi amix, espero el deposito <3");
+            }
+            function toggleActivateState(button){
+                button.classList.toggle('active');
             }
         </script>
     </body>
