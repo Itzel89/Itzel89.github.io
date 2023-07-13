@@ -12,7 +12,11 @@
                     padding: 20px;
                     background-image: url(background.jpg);
                     background-size: cover;
+                    background-attachment: fixed;
                     background-repeat: no-repeat;
+                }
+                .contenedor {
+                    width: 100%;
                 }
                 h2 {
                     background-color: #ffffff;
@@ -20,8 +24,8 @@
                     padding: 20px;
                 }
                 #yesB {
-                    width: 100px;
-                    height: 100px;
+                    width: 10%;
+                    height: 15%;
                     background-color: #fb0691;
                     color: #ffffff;
                     border: none;
@@ -34,8 +38,8 @@
                     transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
                 }
                 .moving-button {
-                    width: 100px;
-                    height: 100px;
+                    width: 10%;
+                    height: 15%;
                     background-color: #fb0691;
                     color: #ffffff;
                     border: none;
@@ -50,14 +54,25 @@
                 .moving-button:hover {
                     background-color: #58082f;
                 }
+                @media screen and (max-width: 800px) {
+                    .moving-button {
+                        top: 70%;
+                        left: 50%;
+                    }
+                    #yesB {
+                        top: 50% ;
+                        left: 50%;
+                    }
+                }
             </style>  
     </head>
     <body>
+        <div class="contenedor">
         <h2><center>Si realmente eres mi amix ¿Me depositarias 50,000 pesos?</center></h2>
         <button id="yesB" onclick="showAlert()">Si</button>
         <!--<p class="message" id = "messageText"></p>-->
-        <button class="moving-button" onmouseover="moveButton()">No</button>
-
+        <button class="moving-button" onclick="moveButton()" onmouseover="moveButton()">No</button>
+        </div>
         <script>
             function moveButton(){
                 const button = document.querySelector('.moving-button');
